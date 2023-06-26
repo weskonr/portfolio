@@ -9,23 +9,62 @@
 </head>
 <body>
 
-    <div style="background-color:red; height: 100%">
+    <div>
 
-        <div class="container">
+        <div class="menu-container">
 
             <div class="dropdown">
+
                 <button class="dropbtn"> Dropdown </button>
+
+                <div class="dropdown-content-container">
 
                     <div class="dropdown-content">
 
+                        <div class="links">
                             @Html.ActionLink("Home", "Index", "Home")
                             @Html.ActionLink("O mnie", "About", "Home")
-                            @Html.ActionLink("Kontakt", "Contact", "Home")
                             @Html.ActionLink("Architektura", "PortfolioMainpage", "Portfolio")
                             @Html.ActionLink("Programowanie", "ProgrammingMainpage", "Programming")
-                            <div> tekst </div>
+                        </div>
+
+                        <button class="btn_close">
+
+                            Zamknij
+
+                        </button>
+
+                        <div>
+                            <div class="tag-container">
+
+                                <div class="contact">
+
+                                    <h2> Would you like to know more? </h2>
+                                    <p> Contact me: </p>
+                                    <div class="contactbtn">
+                                        @Html.ActionLink("Kontakt", "Contact", "Home")
+                                    </div>
+
+                                </div>
+
+                                <div class="tag">
+
+                                    <h1> Konrad Wesołowski </h1>
+                                    <p> e-mail: wesolowski.konrad@outlook.com </p>
+                                    <p> phone: XXX-XXX-XXX </p>
+
+                                </div>
+
+                            </div>
+
+                            <footer>
+                                <p>&copy; @DateTime.Now.Year - My portfolio web application</p>
+                            </footer>
+                        </div>
 
                     </div>
+
+                </div>
 
             </div>
 
@@ -37,12 +76,6 @@
             @RenderBody()
 
         </div>
-
-        <div>
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-            </div>
 
 
         @Scripts.Render("~/bundles/jquery")

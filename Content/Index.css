@@ -18,7 +18,7 @@ section {
 
     section:nth-of-type(even) {
         color: white;
-        background: black;
+        background: #a2a9af;
     }
 
     section:nth-of-type(odd) {

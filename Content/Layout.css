@@ -1,18 +1,48 @@
-﻿
-.container {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    z-index: 9;
-}
-
-.body-content {
+﻿.body-content {
     height: 100%;
-
 }
 
 /*--------------------------------------------------*/
+
+/*Container containing whole menu*/
+.menu-container {
+    position: fixed;
+    height: 100%;
+    width: 40%;
+    z-index: 10;
+}
+
+/*Container with all the dropdown menu content*/
+.dropdown-content-container {
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    background-color: rgb(238,255,255,0,9);
+    backdrop-filter: blur(30px);
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 12;
+    padding-left: 50px;
+    /*-----*/
+    position: absolute;
+    left: -300%;
+    transition: all 0.5s linear;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Show the dropdown menu on click */
+.dropbtn:focus + .dropdown-content-container {
+    left: 0;
+}
+
 /* Style The Dropdown Button */
 .dropbtn {
     background-color: #4CAF50;
@@ -21,55 +51,116 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
-    z-index: 100;
+    height: 50px;
+    width: 150px;
 }
 
-.box {
-    width: 50%;
-    height: 500px;
-    background-color: red;
+/*Hide the dropdown menu on click*/
+.btn_close:focus + .dropdown-content-container {
+    left: -150%;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: sticky;
-    top: 0;
-    display: inline-block;
+/*Style the Close button*/
+.btn_close {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    background-color: coral;
+
+    cursor: pointer;
+    align-self: flex-end;
+    margin-right: 20px;
 }
 
-/* Dropdown Content (Hidden by Default) */
+/*Styling the display of the dropdown menu*/
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color:rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    height: 100vh;
-    width: 50vh;
-    top: -10px;
-    left: -10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+/*Styling links*/
+.links {
+    width: 100%;
+    /*background-color: burlywood;*/
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
+    margin-top: 50px;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+    .links a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .links a:hover {
+        background-color: #f1f1f1;
+    }
+
+/*Styling container with creator tag*/
+.tag-container {
+    width: 100%;
+    /*background-color: bisque;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
+/*Contact tag styling*/
+.contact {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+    width: auto;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    .contact h2 {
+        font-size: 30px;
+
+        margin:0;
+    }
+
+    .contact p {
+        font-size: 20px;
+
+        margin:0;
+    }
+
+    .contact a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+/*tag styling*/
+.tag {
+    display: flex;
+    flex-direction: column;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    line-height: 0px;
+    align-self:flex-end;
+}
+
+    .tag h1 {
+        font-size: 15px
+    }
+
+    .tag p {
+        font-size: 12px;
+    }
+
+/*footer styling*/
+footer {
+    font-size: 10px;
 }
